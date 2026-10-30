@@ -1,0 +1,32 @@
+{
+  "name": "@hostily/captcha-vue",
+  "version": "0.1.0",
+  "description": "Vue 3 component and Nuxt 3/4 module for hostily Captcha (captcha.hostily.de): thin wrapper around the <hostily-captcha> web component. SSR-safe.",
+  "license": "MIT",
+  "author": "connect - Media & Teledienst",
+  "keywords": ["captcha", "vue", "nuxt", "nuxt-module", "spam", "recaptcha-alternative", "proof-of-work"],
+  "homepage": "https://captcha.hostily.de",
+  "repository": { "type": "git", "url": "git+https://github.com/connect-gruppe/hostily-captcha-vue.git" },
+  "bugs": { "url": "https://github.com/connect-gruppe/hostily-captcha-vue/issues" },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+    "./nuxt": { "types": "./nuxt/module.d.mts", "default": "./nuxt/module.mjs" },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "nuxt", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "peerDependencies": { "vue": "^3.3.0", "@nuxt/kit": "^3.0.0 || ^4.0.0" },
+  "peerDependenciesMeta": { "@nuxt/kit": { "optional": true } },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vue": "^3.5.0"
+  }
+}
